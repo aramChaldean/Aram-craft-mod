@@ -57,11 +57,11 @@
             width: 100%;
             font-size: 0.95rem;
             color: #ffffff;
-            margin-left: 8px;
+            margin-right: 8px;
             text-align: right;
         }
         .search-box input::placeholder { color: #94a3b8; }
-        .search-box svg { width: 20px; height: 20px; fill: #38bdf8; }
+        .search-box svg { width: 20px; height: 20px; fill: #38bdf8; flex-shrink: 0; }
         
         .mods-container {
             max-width: 700px;
@@ -90,26 +90,57 @@
             background: rgba(15, 23, 42, 0.4);
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
             gap: 14px;
+            direction: ltr;
+            text-align: left;
         }
         .mod-icon {
-            width: 44px;
-            height: 44px;
+            width: 50px;
+            height: 50px;
             border-radius: 8px;
             object-fit: cover;
             border: 1px solid rgba(255, 255, 255, 0.15);
             background: #111;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #38bdf8;
+            font-weight: bold;
+            font-size: 1.2rem;
         }
         .mod-title {
             color: #ffffff;
-            font-size: 1.05rem;
+            font-size: 1.1rem;
             font-weight: 700;
             flex-grow: 1;
         }
-        .mod-desc {
+        .mod-body {
             padding: 14px 16px;
+        }
+        .mod-desc {
             color: #cbd5e1;
             font-size: 0.88rem;
-            line-height: 1.5;
+            line-height: 1.6;
+            direction: ltr;
+            text-align: left;
+            margin-bottom: 14px;
+        }
+        .download-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background: linear-gradient(135deg, #0284c7, #0369a1);
+            color: #ffffff;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
+            transition: background 0.2s ease;
+        }
+        .download-btn:hover {
+            background: linear-gradient(135deg, #0369a1, #075985);
         }
     </style>
 </head>
@@ -122,59 +153,171 @@
 
     <div class="search-container">
         <div class="search-box">
+            <input type="text" id="searchInput" placeholder="ابحث عن مود أو إضافة...">
             <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
-            <input type="text" placeholder="ابحث عن مود أو إضافة...">
         </div>
     </div>
 
-    <div class="mods-container">
+    <div class="mods-container" id="modsList">
 
-        <!-- مود 1: Force Creative -->
+        <!-- 1. Force Creative -->
         <div class="mod-card">
             <div class="mod-header">
-                <!-- استبدل الرابط أدناه برابط صورة أيقونة المود الأول إذا رفعتها بمستودعك -->
-                <img src="148092.jpg" alt="Force Creative" class="mod-icon">
                 <div class="mod-title">Force Creative</div>
+                <img src="./148092.jpg" alt="Force Creative" class="mod-icon">
             </div>
-            <div class="mod-desc">
-                Created by @Itzriyo157. Change gamemode survival to creative without activating cheats and without losing achievements!
+            <div class="mod-body">
+                <div class="mod-desc">
+                    Created by @Itzriyo157. Change gamemode survival to creative without activating cheats and without losing achievements!
+                </div>
+                <!-- استبدل # برابط التحميل المباشر للمود -->
+                <a href="#" class="download-btn">تحميل المود (Download)</a>
             </div>
         </div>
 
-        <!-- مود 2: WAILA -->
+        <!-- 2. WAILA -->
         <div class="mod-card">
             <div class="mod-header">
-                <img src="148090.jpg" alt="WAILA" class="mod-icon">
                 <div class="mod-title">[v5.1] WAILA [RP]</div>
+                <img src="./148090.jpg" alt="WAILA" class="mod-icon">
             </div>
-            <div class="mod-desc">
-                See what you are looking at as displayed in the HUD. Created by r4isen1920.
+            <div class="mod-body">
+                <div class="mod-desc">
+                    See what you are looking at as displayed in the HUD. Created by r4isen1920.
+                </div>
+                <a href="#" class="download-btn">تحميل المود (Download)</a>
             </div>
         </div>
 
-        <!-- مود 3: Morphing Bracelet -->
+        <!-- 3. Morphing Bracelet -->
         <div class="mod-card">
             <div class="mod-header">
-                <img src="148084.jpg" alt="Morphing Bracelet" class="mod-icon">
                 <div class="mod-title">Morphing Bracelet [BETA]</div>
+                <img src="./148084.jpg" alt="Morphing Bracelet" class="mod-icon">
             </div>
-            <div class="mod-desc">
-                This add-on gives players the ability to morph into different mobs using Morphing Bracelet (Behavior Pack, 26.40+)
+            <div class="mod-body">
+                <div class="mod-desc">
+                    This add-on gives players the ability to morph into different mobs using Morphing Bracelet (Behavior Pack, 26.40+)
+                </div>
+                <a href="#" class="download-btn">تحميل المود (Download)</a>
             </div>
         </div>
 
-        <!-- مود 4: Biomes & Beyond -->
+        <!-- 4. Biomes & Beyond -->
         <div class="mod-card">
             <div class="mod-header">
-                <img src="148086.jpg" alt="Biomes & Beyond" class="mod-icon">
                 <div class="mod-title">Biomes & Beyond [BETA] - Behavior</div>
+                <img src="./148086.jpg" alt="Biomes & Beyond" class="mod-icon">
             </div>
-            <div class="mod-desc">
-                A world expansion add-on that adds new biomes, blocks, mobs, & more! [v0.9.0-beta] | by iKorbon & CoreBlock Studios
+            <div class="mod-body">
+                <div class="mod-desc">
+                    A world expansion add-on that adds new biomes, blocks, mobs, & more! [v0.9.0-beta] | by iKorbon & CoreBlock Studios
+                </div>
+                <a href="#" class="download-btn">تحميل المود (Download)</a>
+            </div>
+        </div>
+
+        <!-- 5. مود 5 -->
+        <div class="mod-card">
+            <div class="mod-header">
+                <div class="mod-title">Mod Name 5</div>
+                <div class="mod-icon">5</div>
+            </div>
+            <div class="mod-body">
+                <div class="mod-desc">
+                    Description for the fifth Minecraft add-on or modification.
+                </div>
+                <a href="#" class="download-btn">تحميل المود (Download)</a>
+            </div>
+        </div>
+
+        <!-- 6. مود 6 -->
+        <div class="mod-card">
+            <div class="mod-header">
+                <div class="mod-title">Mod Name 6</div>
+                <div class="mod-icon">6</div>
+            </div>
+            <div class="mod-body">
+                <div class="mod-desc">
+                    Description for the sixth Minecraft add-on or modification.
+                </div>
+                <a href="#" class="download-btn">تحميل المود (Download)</a>
+            </div>
+        </div>
+
+        <!-- 7. مود 7 -->
+        <div class="mod-card">
+            <div class="mod-header">
+                <div class="mod-title">Mod Name 7</div>
+                <div class="mod-icon">7</div>
+            </div>
+            <div class="mod-body">
+                <div class="mod-desc">
+                    Description for the seventh Minecraft add-on or modification.
+                </div>
+                <a href="#" class="download-btn">تحميل المود (Download)</a>
+            </div>
+        </div>
+
+        <!-- 8. مود 8 -->
+        <div class="mod-card">
+            <div class="mod-header">
+                <div class="mod-title">Mod Name 8</div>
+                <div class="mod-icon">8</div>
+            </div>
+            <div class="mod-body">
+                <div class="mod-desc">
+                    Description for the eighth Minecraft add-on or modification.
+                </div>
+                <a href="#" class="download-btn">تحميل المود (Download)</a>
+            </div>
+        </div>
+
+        <!-- 9. مود 9 -->
+        <div class="mod-card">
+            <div class="mod-header">
+                <div class="mod-title">Mod Name 9</div>
+                <div class="mod-icon">9</div>
+            </div>
+            <div class="mod-body">
+                <div class="mod-desc">
+                    Description for the ninth Minecraft add-on or modification.
+                </div>
+                <a href="#" class="download-btn">تحميل المود (Download)</a>
+            </div>
+        </div>
+
+        <!-- 10. مود 10 -->
+        <div class="mod-card">
+            <div class="mod-header">
+                <div class="mod-title">Mod Name 10</div>
+                <div class="mod-icon">10</div>
+            </div>
+            <div class="mod-body">
+                <div class="mod-desc">
+                    Description for the tenth Minecraft add-on or modification.
+                </div>
+                <a href="#" class="download-btn">تحميل المود (Download)</a>
             </div>
         </div>
 
     </div>
 
+    <script>
+        const searchInput = document.getElementById('searchInput');
+        const modCards = document.querySelectorAll('.mod-card');
+
+        searchInput.addEventListener('input', (e) => {
+            const term = e.target.value.toLowerCase();
+            modCards.forEach(card => {
+                const text = card.innerText.toLowerCase();
+                if(text.includes(term)) {
+                    card.style.display = "block";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        });
+    </script>
 </body>
 </html>
